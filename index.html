@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link type="image/png" sizes="32x32" rel="icon" href="/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<main>
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap gap-x-4 md:gap-x-8 py-8">
+
+            <form id="searchForm" class="flex-1 relative">
+                <input type="text" placeholder="Szukaj filmów... " name="search" id="search"
+                       class="w-full pl-6 py-3 pr-14 rounded-xl border border-zinc-300 placeholder-zinc-800">
+
+                <button type="submit" class="w-12 h-full absolute right-0">
+                    <img src="/search.svg" alt="Search icon" class="w-6">
+                </button>
+            </form>
+
+            <div class="border border-zinc-300 rounded-xl">
+                <select name="type" id="type"
+                        class="w-30 md:w-36 p-3 border-r-8 border-transparent rounded-xl text-zinc-800">
+                    <option value="" disabled selected class="">Typ filmu</option>
+                    <option value="movie">Film</option>
+                    <option value="series">Serial</option>
+                    <option value="episode">Epizod</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div id="noData" class="flex flex-col items-center">
+            <img src="/no-data.jpg" alt="No data to show" class="w-full max-w-2xl"/>
+            <span class="block mt-4 text-xl font-bold">Brak danych do pokazania</span>
+            <span class="block mt-2 text-center text-zinc-700">
+                Wpisz tytuł filmu w wyszukiwarce <br/>
+                Na pewno coś znajdziemy!
+            </span>
+        </div>
+
+        <div id="movieTable" class="w-full max-h-calc-content md:max-h-max pb-10 hidden">
+            <table class="w-full h-full overflow-auto">
+                <thead class="bg-zinc-100 pt-4">
+                <tr>
+                    <th scope="col" class="py-3 pr-6 pl-10 text-left text-zinc-600 font-medium rounded-l-xl">Plakat</th>
+                    <th scope="col" class="py-3 px-6 text-left text-zinc-600 font-medium">Tytuł</th>
+                    <th scope="col" class="py-3 px-6 text-left text-zinc-600 font-medium">Typ</th>
+                    <th scope="col" class="py-3 px-6 text-left text-zinc-600 font-medium rounded-r-xl">Rok</th>
+                </tr>
+                </thead>
+
+                <tbody id="movieTableBody">
+                <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</main>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
+
