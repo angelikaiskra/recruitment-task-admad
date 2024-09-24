@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Create .env
-        run: echo -e "VITE_APP_OMDB_API_URL=http://www.omdbapi.com/\nVITE_APP_API_KEY=4946cf88" > .env
+        run: echo -e "VITE_APP_OMDB_API_URL=https://www.omdbapi.com/\nVITE_APP_API_KEY=4946cf88" > .env
       - name: Build
         run: npm run build
       - name: Setup Pages
